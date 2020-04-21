@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="btn_2"></div>
+    </body>
+</html>
+
+<script>
+  document.body.onload = addElement;
+  var my_div = newBtn = null;
+function addElement() {
+
+// создаем новый элемент div
+// и добавляем в него немного контента
+
+var newBtn = document.createElement("btn");
+    newBtn.innerHTML = "Привет!";
+
+// добавляем только что созданый элемент в дерево DOM
+
+my_div = document.getElementById("btn_2");
+document.body.insertBefore(newBtn, my_div);
+}
+// создание кнопки
+function makeButton() {
+
+var my_div = newBtn = null;
+var mybtn = function () {
+
+    var newBtn = document.createElement("button");
+    newBtn.innerHTML = "Привет!";
+    my_div = document.getElementById("btn_2");
+    document.body.insertBefore(newBtn, my_div);
+    newBtn.classList.add("color");
+    newBtn.id = 'color';
+    newBtn.style.color = 'red';
+    // newBtn.style.backgroundColor = '#f5f5f5';
+
+    return newBtn;
+}
+}
+</script>

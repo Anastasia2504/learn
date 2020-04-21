@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .textarea_block {
+            border: 2px solid #EE3A3B;
+            border-radius: 5px;
+            color: 494040;
+            font-size: 18px;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br>
+
+    <script>
+        function myTextarea() {
+            function myTextarea() {}
+
+            var textarea = document.createElement("textarea");
+
+            textarea.classList.add("textarea_block");
+            textarea.style.height = 150 + "px";
+
+            document.body.appendChild(textarea);
+
+            myTextarea.set_text = function(str) {
+                textarea.textContent = str;
+            }
+
+            myTextarea.get_text = function() {
+                return textarea.textContent;
+            }
+
+            return myTextarea;
+        }
+
+        let ta = myTextarea(document.body);
+        ta.set_text('Hello!');
+        let delay = 300;
+        var digit = 0;
+        let timerId = setTimeout(function request() {
+            ta.set_text(ta.get_text().toString() + digit);
+            digit = (digit + 1) % 10;
+            timerId = setTimeout(request, delay);
+        }, delay);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="btn1"></div>
+    </body>
+</html>
+
+<script>
+
+function makeCounter() { // класс -- он же конструктор экземпляров
+    var count = 0; // внутренне состояние замыкания (экземпляра)
+    var counter = function() {
+        return count++;
+    }
+    return counter;
+}
+
+let counter1 = makeCounter(); // создаем экземпляр
+let counter2 = makeCounter(); // создаем экземпляр №2
+
+console.log(counter1()); // 0
+console.log(counter1()); // 1
+console.log(counter1()); // 2
+console.log(counter1()); // 3
+console.log(counter1()); // 4
+console.log(counter2()); // 0
+console.log(counter2()); // 1
+console.log(counter2()); // 2
+console.log(counter2()); // 3
+console.log(counter2()); // 4
+
+//////////////////////////////////////////
+
+function makeAdder(a) { // класс -- конструктор экземпляров с параметром
+    return function(x) {
+        return x + a;
+    }
+}
+
+// Экземпляры
+let adder2 = makeAdder(2);
+let adder5 = makeAdder(5);
+let adderTen = makeAdder(10);
+
+console.log(adder2(10)); // 12
+console.log(adder2(20)); // 22
+console.log(adder5(10)); // 15
+console.log(adderTen(10)); // 20
+
+//////////////////////////////////////////
+
+function makeChair() { // Класс -- конструктор
+    var chair = function () { // Новый экземпляр
+        console.log(`I'm a ${color} chair with ${legs} legs!`);
+    }
+
+    // Устанавливаем по ключу "setColor" значение равное функции
+    chair.setColor = function(str) { // Метод класса
+        color = str;
+    }
+
+    chair.getColor = function() {
+        return color;
+    }
+
+    chair.addLeg = function() {
+        legs++;
+    }
+
+    var color = "colorless",
+        legs = 4;
+
+    return chair;
+}
+
+let chair1 = makeChair();
+chair1.setColor("pink");
+chair1.addLeg();
+console.log(chair1.getColor()); // "pink"
+document.getElementsByTagName("body");
+chair1();
+
+//////////////////////////////////////////
+
+function makeButton(div) {
+    var button = function() {
+        // Эта функция должна рисовать кнопку (div.InnerHTML, div.style...)
+        ...
+    }
+
+    // 1) метод: задать цвет кнопки
+    // 2) метод: получить цвет кнопки
+    // 3) сделать подсчет числа кликов
+    // 4) написать число кликов на кнопку
+    ...
+}
+
+// Сделать 3 разных кнопки
+let mybtn = makeButton(document.getElementById...);
+
+</script>

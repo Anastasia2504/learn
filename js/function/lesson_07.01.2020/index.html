@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .pink {
+            background-color: "#ff294d";
+        }
+
+        .red {
+            background-color: "#ff0000";
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="btn_2"></div>
+
+
+
+
+    <script>
+        // var button = document.getElementById("btn");
+        function makeButton() {
+
+            var my_div = newBtn = null;
+            var mybtn = function () {
+
+                var newBtn = document.createElement("button");
+                newBtn.innerHTML = "Привет!";
+                my_div = document.getElementById("btn_2");
+                document.body.insertBefore(newBtn, my_div);
+                newBtn.classList.add("color");
+                newBtn.id = 'color';
+                newBtn.style.color = 'red';
+                // newBtn.style.backgroundColor = '#f5f5f5';
+
+                return newBtn;
+            }
+
+            
+            mybtn.onclick = function () {
+
+                document.getElementById("color").addEventListener("click", myAlert);
+
+                function myAlert() {
+                    alert("Hello!");
+                }
+
+            }
+            
+
+            // var color_2 = getRandomColor(); 
+            mybtn.setColor = function () {
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF';
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    console.log(color);
+                    return color;
+                }
+                document.getElementById("color").style.backgroundColor = getRandomColor();
+            }
+
+            // 
+            mybtn.addCount = function() {
+                var clicks = 0;
+                clicks += 1;
+                console.log(clicks);
+                return clicks;
+            }
+
+
+            // 1) метод: задать цвет кнопки
+            // 2) метод: получить цвет кнопки
+            // 3) сделать подсчет числа кликов
+            // 4) написать число кликов на кнопку
+            // ...
+
+            return mybtn;
+        }
+
+        // счетчик событий 
+        function addCount() {
+
+            /* var my_div_2 = newBtn_2 = null;
+                 var mybtn_2 = function () {
+                     var newBtn_2 = document.createElement("button");
+                     newBtn_2.innerHTML = "Привет!";
+                     my_div_2 = document.getElementById("btn_2");
+                     document.body.insertBefore(newBtn_2, my_div_2);
+                     newBtn_2.classList.add("color");
+                     newBtn_2.id = 'count';
+                     newBtn_2.style.color = 'red';
+                     // newBtn.style.backgroundColor = '#f5f5f5';
+
+                     return newBtn_2;
+                 }
+                 return mybtn_2;*/
+            var clicks = 0;
+            clicks += 1;
+            document.getElementById("color").innerHTML = clicks;
+        }
+        // 
+        let mybtn = makeButton();
+        mybtn();
+
+        // mybtn.getRandomColor();
+        mybtn.setColor();
+        var test = mybtn.onclick();
+        mybtn.addCount();
+        // mybtn.addColor("pink");
+
+        // let mybtn_2 = addCount();
+        // mybtn_2();
+
+
+
+
+        // Сделать 3 разных кнопки
+        // let mybtn = makeButton(document.getElementById...);
+    </script>
+</body>
+
+</html>

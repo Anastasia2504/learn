@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .pink {}
+
+        #greyProgress {
+            width: 100%;
+            background-color: #f5f5f5;
+        }
+
+        #myBar {
+            width: 10%;
+            height: 30px;
+            background-color: #ff294d;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="btn_2"></div>
+    <div id="greyProgress">
+        <div id="myBar">10%</div>
+    </div>
+    <br>
+    <button onclick='clickBar()'>Пуск</button>
+
+
+
+    <script>
+        // var button = document.getElementById("btn");
+        function clickBar() {
+                var mibar = document.getElementById("myBar");
+                var width = 10;
+                
+                var id = setInterval(addTime, 10);
+                function addTime() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                    } else {   
+                        width++;
+                        mibar.style.width = width + '%'; 
+                        mibar.innerHTML = width * 1  + '%';
+                    }
+                }
+                console.log(width);
+
+
+    }
+    clickBar();
+
+    </script>
+</body>
+
+</html>

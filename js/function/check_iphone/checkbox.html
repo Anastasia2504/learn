@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .progress_bar-outer {
+            width: 55px;
+            background-color: #ddd;
+            border-radius: 17px;
+            margin: 2px;
+        }
+
+        .progress_bar-inner {
+            height: 30px;
+            width: 30px;
+            background-color: #4f4;
+            color: white;
+            border-radius: 100%;
+        }
+
+        .new {
+            height: 30px;
+            background-color: #ff294d;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br>
+
+    <script>
+        function beg(node) {
+            function beg() { };
+
+            
+            var outer_div = document.createElement("div");
+            var inner_div = document.createElement("div");
+            outer_div.classList.add("progress_bar-outer");
+            inner_div.classList.add("progress_bar-inner");
+            inner_div.style.marginLeft = num;
+            node.appendChild(outer_div);
+            outer_div.appendChild(inner_div);
+
+            outer_div.addEventListener("click", function () {
+                if (num === 0) {
+                    num = 25;
+                } else {
+                    num = 0;
+                }
+                inner_div.style.marginLeft = num + 'px';
+            });
+
+            beg.get_checked = function () {
+                if (num === 0) {
+                    return false;
+                } else {
+                    return true;
+                }            
+            }
+
+            beg.set_checked = function(value) {
+                if (value) {
+                    num = 25;
+                } else {
+                    num = 0;
+                }
+                inner_div.style.marginLeft = num + 'px';
+            }
+
+            return beg;
+        }
+
+        let beg1 = beg(document.body);
+        let beg2 = beg(document.body);
+        beg1.set_checked(true);
+        beg2.set_checked(false);
+
+        setInterval(function () {
+            // переключить
+            let value = beg1.get_checked();
+            beg1.set_checked(!value);
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

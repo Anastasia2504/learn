@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        button {
+            background-color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <button type="submit" onclick='check1.setCheckedCheckBoxes()'>Пуск</button> -->
+    <button type="submit" onclick='workButton()'>Пуск</button>
+
+    <script>
+        let count = 0;
+
+        function checkbox(node) {
+            function checkbox() {};
+            var color = 'pink';
+
+            var outer_div = document.createElement("div");
+            var mycheck = document.createElement("INPUT");
+            mycheck.setAttribute("type", "checkbox", "value");
+
+            outer_div.classList.add("container_checkbox");
+            mycheck.classList.add("checkbox");
+            outer_div.innerText = "Checkbox";
+            node.appendChild(outer_div);
+            outer_div.appendChild(mycheck);
+            var checkbox_arr = [];
+            var checkboxes = document.getElementsByClassName('checkbox');
+            checkbox.setCheckedCheckBoxes = function() {
+                // var checkboxes = document.getElementsByClassName('checkbox');
+                // var checkbox_arr = []; // можно в массиве их хранить, если нужно использовать 
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                        checkbox_arr.push(checkboxes[i].value); // положим в массив выбранный
+                        alert(checkboxes[i].value); // делайте что нужно - это для наглядности
+                    }
+                }
+                console.log(checkbox_arr);
+                return checkbox_arr; // для использования в нужном месте
+            }
+
+            checkbox.getCheckedCheckBoxes = function() {
+                console.log(checkbox_arr);
+                
+                for (var i = 0; i < checkbox_arr; i++) {
+                    let ch = checkboxes[i].value;
+                    if (checkbox_arr[i] === "on") {
+                        console.log("Выбрана " + ch);
+                        outer_div.innerText = "Выбрана " + ch; 
+                    }   
+                }
+                
+            }
+            
+            return checkbox;
+        }
+        let check1 = checkbox(document.body);
+        let check2 = checkbox(document.body);
+        let check3 = checkbox(document.body);
+
+        // check1.getCheckedCheckBoxes();
+        // check2.getCheckedCheckBoxes();
+        // check3.getCheckedCheckBoxes();
+        function workButton() {
+            check1.setCheckedCheckBoxes();
+            check1.getCheckedCheckBoxes();
+        }
+    </script>
+</body>
+
+</html>

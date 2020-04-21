@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .pink {
+            background-color: "#ff294d";
+        }
+
+        .red {
+            background-color: "#ff0000";
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        function makeButton(node) {
+            var mybtn = function () {}
+
+            // Число кликов
+            var clicks = 0;
+
+            // Создаем кнопку
+            var newBtn = document.createElement("button");
+            newBtn.innerHTML = `Clicks: ${clicks}`;
+            newBtn.classList.add("color");
+            newBtn.style.color = 'red';
+
+            // Задаем начальный цвет
+            function getRandomColor() {
+                let letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            var bgcolor = getRandomColor();
+
+            // Вставляем кнопку в DOM
+            node.appendChild(newBtn);
+
+            // Устанавливаем обработчик кликов
+            newBtn.addEventListener("click", function () {
+                clicks++;
+                newBtn.innerHTML = `Clicks: ${clicks}`;
+            });
+
+            // Accessor: установить цвет кнопки
+            mybtn.setColor = function (value) {
+                bgcolor = value;
+                newBtn.style.backgroundColor = value;
+            }
+
+            // Accessor: получить текущий цвет
+            mybtn.getColor = function () {
+                return bgcolor;
+            }
+
+            // Accessor: получить число кликов
+            mybtn.getClicks = function () {
+                return clicks;
+            }
+
+            return mybtn;
+        }
+
+        let mybtn1 = makeButton(document.body);
+        let mybtn2 = makeButton(document.body);
+        
+        mybtn1.setColor('pink');        
+        mybtn2.setColor('blue');
+    </script>
+</body>
+
+</html>

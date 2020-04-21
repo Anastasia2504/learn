@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="block">
+        <h1>Hello!</h1>
+        <p>My name is Ann.</p>
+    </div>
+    <script>
+        document.body.style.background = 'red'; // сделать фон красным
+        // setTimeout позволяет вызвать функцию один раз через определённый интервал времени
+        setTimeout(() => document.body.style.background = '', 3000); // вернуть назад
+        // В DOM значение null значит «не существует» или «нет такого узла».
+        for (let i = 0; i < document.body.childNodes.length; i++) {
+            // console.log(document.body.childNodes[i]); // Text, DIV, Text, UL, ..., SCRIPT
+        }
+        for (let node of document.body.childNodes) {
+            console.log(node); // покажет все узлы из коллекции
+        }
+
+        let arr = Array.from(document.body.childNodes);
+        let x = '';
+        x += `${<div>fgfufe</div>}`;
+        arr.push(x);
+    </script>
+</body>
+
+</html>

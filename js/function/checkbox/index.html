@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+      button {
+          background-color: pink;
+      }
+    </style>
+
+</head>
+
+<body>
+    <button type= "submit" onclick='sendCheck()'>Пуск</button>
+    
+    <script>
+        let count = 0;
+        function checkbox(node) {
+            function checkbox() {};
+            var color = 'pink';
+            
+            var outer_div = document.createElement("div");
+            var mycheck = document.createElement("INPUT");
+            mycheck.setAttribute("type", "checkbox");
+
+            outer_div.classList.add("container_checkbox");
+            mycheck.classList.add("checkbox");
+            outer_div.innerText = "Согласны на обработку персональных данных";
+            // 
+            
+
+            node.appendChild(outer_div);
+            outer_div.appendChild(mycheck);
+
+            checkbox.set_color = function (value) {
+                color = value;
+                outer_div.style.backgroundColor = color;
+            }
+
+            checkbox.get_color = function () {
+                return color;
+            }
+
+            checkbox.checked = function(value) {
+                color = value;
+                    count = count + 1;
+                console.log(count);
+                return count;
+            }
+            return checkbox;
+
+        }
+        function sendCheck() {
+            if (count === 1) {
+                alert("Данные отправлены");
+            } else {
+                alert("Отметь галочку");
+            }
+
+        }
+        let mycheck = checkbox(document.body);
+
+        mycheck.set_color('lightblue');
+        mycheck.checked('pink');
+    </script>
+</body>
+
+</html>

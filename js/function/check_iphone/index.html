@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .progress_bar-outer {
+            width: 100%;
+            background-color: #f5f5f5;
+            border-radius: 15px;
+
+        }
+
+        .progress_bar-inner {
+            height: 30px; 
+            background-color: #ff294d;
+            color: white;
+            border-radius: 100%;
+        }
+
+        .new {
+            height: 30px;
+            background-color: #ff294d;
+        }
+    </style>
+
+</head>
+
+<body>
+    <br>
+
+    <script>
+        function beg(node) {
+            function beg() {};
+            let a = 200;
+            let b = 50;
+            let c = 5;
+            var color = 'pink';
+            let num = c + "px";
+            var outer_div = document.createElement("div");
+            var inner_div = document.createElement("button");
+            outer_div.classList.add("progress_bar-outer");
+            inner_div.classList.add("progress_bar-inner");
+            
+            inner_div.style.width = b + "px";
+            width = a + "px";
+            inner_div.style.marginLeft= num;
+            outer_div.style.width = width;
+            node.appendChild(outer_div);
+            outer_div.appendChild(inner_div);
+            
+
+            /*beg.set_color = function (value) {
+                color = value;
+                inner_div.style.backgroundColor = color;
+
+            }
+            beg.get_color = function () {
+                return color;
+            }*/
+            beg.set_margin = function () {
+                c = width - b;
+                inner_div.style.marginLeft = c + "px";
+                return num;
+
+            }
+            
+            inner_div.addEventListener("click", function() {
+                if(num === 5 + "px") {
+                    c = a - b;
+                    inner_div.style.marginLeft = c + "px";
+                    console.log(c);
+                } else {
+                    c = 150;
+                    inner_div.style.marginRight = 0 + "px";
+                    inner_div.style.marginRight = c + "px";
+                }
+            });
+
+        return beg;
+        }
+
+        let beg1 = beg(document.body);
+        let beg2= beg(document.body);
+        // beg1.get_margin();
+
+    </script>
+</body>
+
+</html>

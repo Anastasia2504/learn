@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <style>
+        .circle {
+            fill: #ff294d;
+            stroke: #8f0018;
+            stroke-width: 5px;
+        }
+
+        .block {
+            margin: 0 auto;
+            border: 2px solid #ff294d;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- <script type="text/javascript" src="../cdn/d3.v5.min.js"></script> -->
+
+    <script>
+        let user = {
+            name: "John",
+            surname: "Smith",
+            age: 30,
+            sex: "m",
+            city: "Chicago",
+            contry: "USA"
+        };
+        // Object.keys(obj) – возвращает массив ключей.
+        let arr_1 = Object.keys(user);
+        // Object.values(user) - возвращает массив значений.
+        let arr_2 = Object.values(user);
+        // Object.entries(user) - возвращает массив пар [ключ, значение]
+        let arr_3 = Object.entries(user);
+
+
+        let salaries = {
+            work_1: 20000,
+            work_2: 30000,
+            work_3: 20000,
+            work_4: 20000,
+            work_5: 20000,
+            work_6: 30000,
+            work_7: 30000,
+            work_8: 20000,
+            director: 50000,
+
+        }
+        let data = [{
+                name: "vasya",
+                surname: "pupkin",
+                age: 20,
+                sex: "m",
+                salary: 15000
+            },
+            {
+                name: "kolya",
+                surname: "pupkin",
+                age: 18,
+                sex: "m",
+                salary: 12000
+            },
+            {
+                name: "veronika",
+                surname: "petrova",
+                age: 22,
+                sex: "f",
+                salary: 20000
+            },
+            {
+                name: "vera",
+                surname: "ivanova",
+                age: 30,
+                sex: "f",
+                salary: 35000
+            },
+            {
+                name: "ivan",
+                surname: "ivanov",
+                age: 65,
+                sex: "m",
+                salary: 5000
+            }
+        ];
+
+        function sumSalaries(salaries) {
+            let salaries_2;
+            for (var key in salaries) {
+                salaries_2 = Object.values(salaries).reduce((a, s) => a + s, 0);
+
+            }
+            console.log(salaries_2);
+        }
+        sumSalaries(salaries);
+
+
+        //    Деструктурирующее присваивание
+        // у нас есть массив с именем и фамилией
+        let arr = ["Ilya", "Kantor"]
+
+        // деструктурирующее присваивание
+        // записывает firstName=arr[0], surname=arr[1]
+        let [firstName, surname] = arr;
+
+        alert(firstName); // Ilya
+        alert(surname); // Kantor
+
+        let ar_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let [a, b, c, d, e, , r] = ar_2;
+    </script>
+
+</body>
+
+</html>

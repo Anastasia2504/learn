@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .progress_bar-outer {
+            width: 100%;
+            background-color: #f5f5f5;
+        }
+
+        .progress_bar-inner {
+            height: 30px;
+            background-color: #ff294d;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick='clickBar()'>Пуск</button>
+    <br>
+
+    <script>
+        function progress_bar(node) {
+            function progress_bar() {}
+            var progress = 10; // 0%-100%
+            var color = 'pink';
+            var outer_div = document.createElement("div");
+            var inner_div = document.createElement("div");
+            outer_div.classList.add("progress_bar-outer");
+            inner_div.classList.add("progress_bar-inner");
+            inner_div.innerText = progress + "%";
+            inner_div.style.width = progress + "%";
+            node.appendChild(outer_div);
+            outer_div.appendChild(inner_div);
+
+            progress_bar.set_color = function (value) {
+                color = value;
+                inner_div.style.backgroundColor = color;
+            }
+
+            progress_bar.get_color = function () {
+                return color;
+            }
+
+            progress_bar.set_progress = function (value) {
+                progress = value;
+                inner_div.innerText = progress + "%";
+                inner_div.style.width = progress + '%';
+            }
+
+            progress_bar.get_progress = function () {
+                return progress;
+            }
+
+            return progress_bar;
+        }
+
+        let pb1 = progress_bar(document.body);
+        let pb2 = progress_bar(document.body);
+
+        pb1.set_progress(50);
+        pb2.set_color('lightblue');
+
+        function clickBar() {
+            var width = 0;
+            var id = setInterval(addTime, 50);
+            function addTime() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    pb2.set_progress(width);
+                    pb1.set_progress(width);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

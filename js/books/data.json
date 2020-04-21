@@ -1,0 +1,81 @@
+var data = {
+ "kind": "books#volumes",
+ "totalItems": 1,
+ "items": [
+  {
+   "kind": "books#volume",
+   "id": "gYtIDwAAQBAJ",
+   "etag": "RIm3Ih8KgFA",
+   "selfLink": "https://www.googleapis.com/books/v1/volumes/gYtIDwAAQBAJ",
+   "volumeInfo": {
+    "title": "The Rabbit Listened",
+    "authors": [
+     "Cori Doerrfeld"
+    ],
+    "publisher": "Penguin",
+    "publishedDate": "2018",
+    "description": "\"When Taylor's block castle is destroyed, all the animals think they know just what to do, but only the rabbit quietly listens to how Taylor is feeling\"--",
+    "industryIdentifiers": [
+     {
+      "type": "ISBN_13",
+      "identifier": "9780735229358"
+     },
+     {
+      "type": "ISBN_10",
+      "identifier": "073522935X"
+     }
+    ],
+    "readingModes": {
+     "text": false,
+     "image": false
+    },
+    "pageCount": 40,
+    "printType": "BOOK",
+    "categories": [
+     "Juvenile Fiction"
+    ],
+    "averageRating": 4.5,
+    "ratingsCount": 4,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "0.2.0.0.preview.0",
+    "panelizationSummary": {
+     "containsEpubBubbles": false,
+     "containsImageBubbles": false
+    },
+    "imageLinks": {
+     "smallThumbnail": "http://books.google.com/books/content?id=gYtIDwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+     "thumbnail": "http://books.google.com/books/content?id=gYtIDwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.ru/books?id=gYtIDwAAQBAJ&dq=isbn:073522935X&hl=&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.ru/books?id=gYtIDwAAQBAJ&dq=isbn:073522935X&hl=&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/The_Rabbit_Listened.html?hl=&id=gYtIDwAAQBAJ"
+   },
+   "saleInfo": {
+    "country": "RU",
+    "saleability": "NOT_FOR_SALE",
+    "isEbook": false
+   },
+   "accessInfo": {
+    "country": "RU",
+    "viewability": "NO_PAGES",
+    "embeddable": false,
+    "publicDomain": false,
+    "textToSpeechPermission": "ALLOWED",
+    "epub": {
+     "isAvailable": false
+    },
+    "pdf": {
+     "isAvailable": false
+    },
+    "webReaderLink": "http://play.google.com/books/reader?id=gYtIDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+    "accessViewStatus": "NONE",
+    "quoteSharingAllowed": false
+   },
+   "searchInfo": {
+    "textSnippet": "&quot;When Taylor&#39;s block castle is destroyed, all the animals think they know just what to do, but only the rabbit quietly listens to how Taylor is feeling&quot;--"
+   }
+  }
+ ]
+}

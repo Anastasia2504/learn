@@ -1,0 +1,207 @@
+<html>
+
+<head>
+    <style>
+        .circle {
+            fill: #ff294d;
+            stroke: #8f0018;
+            stroke-width: 5px;
+        }
+
+        .block {
+            margin: 0 auto;
+            border: 2px solid #ff294d;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- <script type="text/javascript" src="../cdn/d3.v5.min.js"></script> -->
+
+    <script>
+        /*let x = +prompt('Введите число и степень');
+    let n = +prompt('Введите степень');
+    function calcPow(x, n) {
+        let y;
+        if (n > 1) {
+            
+            y = Math.pow(x, n);
+
+        } else {
+            alert('Введите n > 1');
+        }
+        return y;
+    }
+    let y = calcPow(x, n);
+
+    alert(y);*/
+
+
+
+        // Тест_2 Создается объект. Все его свойства умножаются на 2
+        let obj_test = {
+            one: 1,
+            two: 2,
+            three: 3,
+            four: 4,
+            five: 5,
+            six: 6,
+            seven: 7,
+            eight: 8,
+            nine: 9,
+        }
+        // умножает все числовые свойства объекта obj на 2
+        /*function calcObj(obj) {
+
+            // while(arr.lenght < 0)
+            for (obj_test.lenght) {
+                if (typeof obj[key] == 'number') {
+                    obj[key] *= 2;
+                }
+
+            }
+            return obj;
+            // console.log(arr);
+
+
+        }
+        let b = calcObj(obj_test);
+        console.log(b);*/
+
+
+        let user = {
+            name: ['Jhon', 'Jho', 'Don'],
+            surname: 'Smith',
+            age: 28,
+            city: 'Chicago',
+            country: 'USA',
+            work: 'worker',
+        }
+        // console.log(user);
+        // delete user.name;
+
+        // Моя форма ????????????????????????
+        function sayHello() {
+            alert('Hello!');
+        }
+        // user.sayHello = sayHello();
+
+        // Форма учебника
+
+        /*user.sayHi = function() {
+          alert("Привет!");
+        };
+        user.sayHi();*/
+
+
+        let user_2 = {
+            name: "Джон",
+            hi() {
+                alert(this.name);
+            },
+            bye() {
+                alert("Пока");
+            }
+        };
+        /*Для работы вызовов типа user.hi(), JavaScript использует трюк – точка '.' возвращает не саму функцию, а специальное значение «ссылочного типа», называемого Reference Type.
+        Значение ссылочного типа – это «триплет»: комбинация из трёх значений (base, name, strict), где:
+
+        base – это объект.
+        name – это имя свойства объекта.
+        strict – это режим исполнения. Является true, если действует строгий режим (use strict).
+        */
+        // user_2.hi();
+        let c = 0;
+        let d = 1;
+
+        let calc = {
+            num: [],
+            sum: [],
+            mul: [],
+            readValue() {
+                // num: [];
+                for (let i = 0; i < 2; i++)
+                    calc.num[i] = +prompt('Введите число');
+                // console.log(calc);
+                console.log(calc);
+                // return num;
+            },
+
+            sumValue() {
+                for (let i = 0; i < 2; i++) {
+
+                    c = c + calc.num[i];
+                    calc.sum[i] = c;
+                }
+                console.log(calc);
+            },
+            multiValue() {
+                for (let i = 0; i < 2; i++) {
+                    d = d * calc.num[i];
+                    calc.mul[i] = d;
+                }
+                console.log(calc);
+            }
+
+
+
+
+
+            // return sum;
+
+
+        }
+        // calc.readValue();
+        // calc.sumValue();
+        // calc.multiValue()
+
+        /*function readValue() {
+            let num = [];
+            for(let i = 0;i < 10; i++)
+            num[i] = prompt('Ведите число');
+            return num;
+        }*/
+
+        var animals = ["cat", "dog", "fish", "pig", "snake", "zebra", "ermine"];
+        var lengths = [];
+        var item;
+        var count;
+        var loops = animals.length;
+        for (count = 0; count < loops; count++) {
+            item = animals[count];
+            lengths.push(item.length);
+        }
+        // console.log(lengths); //[3, 3, 4]
+
+        var animals = ["cat", "dog", "fish", "pig", "snake", "zebra", "ermine"];
+        // map - функция высшего порядка
+        var lengths = animals.map(function (animal) {
+            return animal.length;
+        });
+        // console.log(lengths);
+
+
+        var animals = ["cat", "dog", "fish", "pig", "snake", "zebra", "ermine"];
+        var total = 0;
+        var item;
+        for (var count = 0, loops = animals.length; count < loops; count++) {
+            item = animals[count];
+            total += item.length;
+        }
+        // console.log(total);
+
+        var animals = ["cat", "dog", "fish", "pig", "snake", "zebra", "ermine"];
+        var addLength = function (sum, word) {
+            return sum + word.length;
+        };
+        // reduce(a:fuction(),b): a - функция
+        var total = animals.reduce(addLength, 0);
+        console.log(total);
+    </script>
+
+</body>
+
+</html>
