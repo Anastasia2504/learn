@@ -50,7 +50,7 @@ arr7.flat(2);
 
 let arr5 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
 let arr_fl = arr5.flat(Infinity);
-console.log(arr_fl);
+// console.log(arr_fl);
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // Метод flat удаляет пустые слоты из массива:
@@ -101,7 +101,7 @@ function getSameCount2(array1, array2) {
   return count;
 }
 // console.log(getSameCount([1, 3, 2, 2], [3, 1, 1, 2]));
- console.log(getSameCount([1, 1, 2, 3], [2, 3]));
+//  console.log(getSameCount([1, 1, 2, 3], [2, 3]));
 
 //  const actual2 = getSameCount([1, 2], []);
 
@@ -131,8 +131,8 @@ function getSameCount3(array1, array2) {
   console.log(array);
   return array.length;
 }
-getSameCount([4,4], [4,4]);
-getSameCount([1, 1, 2, 3], [2, 3]);
+// getSameCount([4,4], [4,4]);
+// getSameCount([1, 1, 2, 3], [2, 3]);
 
 const getSameCount5 = (coll1, coll2) => {
   let count = 0;
@@ -149,3 +149,46 @@ const getSameCount5 = (coll1, coll2) => {
 
   return count;
 };
+
+// Реализуйте и экспортируйте по умолчанию функцию getIntersectionOfSortedArrays, которая принимает на вход два отсортированных массива и находит их пересечение.
+function getIntersectionOfSortedArrays(arr1, arr2) {
+  let result = [];
+  for(let i = 0; i < arr1.length; i++) {
+    for(let j = 0; j < arr2.length; j++) {
+      if(arr1[i] === arr2[j]) {
+        result.push(arr1[i]);
+      } else if(arr1[i] < arr2[j]) {
+        break;
+      }
+    }
+  }
+  return result;
+}
+console.log(getIntersectionOfSortedArrays([10, 11, 24], [-2, 3, 4]));
+console.log(getIntersectionOfSortedArrays([3, 5, 10], [10, 12, 19, 21]));
+console.log(getIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30]));
+console.log(getIntersectionOfSortedArrays([10, 12, 19, 21], [3, 5, 10]));
+console.log(getIntersectionOfSortedArrays([], [2]));
+console.log(getIntersectionOfSortedArrays([1], []));
+console.log(getIntersectionOfSortedArrays([], []));
+
+function getIntersectionOfSortedArrays2(arr1, arr2) {
+  let i = 0;
+  let j = 0;
+  let result = [];
+  while(i < arr1.length && j < arr2.length)  {
+    if(arr1[i] === arr2[j]){
+      result.push(arr1[i]);
+      i++;
+      j++;
+    } else if(arr1[i] > arr2[j]) {
+      j++;
+    } else {
+      i++;
+    }
+  }
+  return result;
+}
+console.log(getIntersectionOfSortedArrays2([10, 11, 24], [-2, 3, 4]));
+console.log(getIntersectionOfSortedArrays2([3, 5, 10], [10, 12, 19, 21]));
+console.log(getIntersectionOfSortedArrays2([10, 11, 24], [10, 13, 14, 18, 24, 30]));
