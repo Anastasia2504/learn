@@ -1,0 +1,13 @@
+.box {
+  height: 150px;
+  background-color: #673ab7;
+  position: relative;
+  top: -153px;
+  left: -3px;
+}
+.box-shadow {
+  height: 150px;
+  background-color: #461a96;
+  position: relative;
+
+}
