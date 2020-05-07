@@ -1,7 +1,7 @@
 // @ts-check
 /* eslint-disable no-param-reassign */
 
-import crc32 from 'crc-32';
+// import crc32 from 'crc-32';
 
 // BEGIN (write your solution here)
 
@@ -42,9 +42,9 @@ function get(map, key, def) {
 
 
 // 2 вариант
-const getIndex = (key) => Math.abs(crc32.str(key)) % 1000;
+// const getIndex = (key) => Math.abs(crc32.str(key)) % 1000;
 
-const make = () => [];
+const make2 = () => [];
 
 const hasCollision = (map, key) => {
   const index = getIndex(key);
@@ -52,7 +52,7 @@ const hasCollision = (map, key) => {
   return currentKey !== key;
 };
 
-const set = (map, key, value) => {
+const set2 = (map, key, value) => {
   const index = getIndex(key);
   if (map[index] && hasCollision(map, key)) {
     return false;
@@ -62,7 +62,7 @@ const set = (map, key, value) => {
   return true;
 };
 
-const get = (map, key, defaultValue = null) => {
+const get2 = (map, key, defaultValue = null) => {
   const index = getIndex(key);
   if (!map[index] || hasCollision(map, key)) {
     return defaultValue;
@@ -72,5 +72,31 @@ const get = (map, key, defaultValue = null) => {
   return value;
 };
 
-export { make, set, get };
-// END
+
+
+
+// crc32 - хеширование строк
+var makeCRCTable = function(){
+  var c;
+  var crcTable = [];
+  for(var n =0; n < 256; n++){
+      c = n;
+      for(var k =0; k < 8; k++){
+          c = ((c&1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1));
+      }
+      crcTable[n] = c;
+  }
+  return crcTable;
+}
+
+var crc32 = function(str) {
+  var crcTable = window.crcTable || (window.crcTable = makeCRCTable());
+  var crc = 0 ^ (-1);
+
+  for (var i = 0; i < str.length; i++ ) {
+      crc = (crc >>> 8) ^ crcTable[(crc ^ str.charCodeAt(i)) & 0xFF];
+  }
+
+  return (crc ^ (-1)) >>> 0;
+};
+console.log(crc32("hellohellohellohellohellohellohellohellohellohello"));
