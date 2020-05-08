@@ -50,7 +50,7 @@ console.log(result);
 
 // Реализуйте и экспортируйте по умолчанию функцию bubbleSort, которая сортирует массив используя пузырьковую сортировку.
 function bubbleSort2(a) {
-  for (let i = a.length - 1; i > 0; i++) {
+  for (let i = a.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
       if (a[j] > a[j+1]) {
         let x = a[j];
