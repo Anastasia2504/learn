@@ -151,9 +151,53 @@ $.get("cfg.json", function (data) {
         for (let task in data.Tasks) {
             let queue = data.Tasks[task].Attrs.QueueName; 
             data.Tasks[task].Attrs.ExecutorName = data.ExecutionQueues[queue].ExecutorName;
-            console.log(data.Tasks[task].Attrs.ExecutorName);
+            // console.log(data.Tasks[task].Attrs.ExecutorName);
         }
     }
-    addExecutors(data);
+    // addExecutors(data);
+    function countPqout({Tasks}) {
+        let index = {};
+        let count = 0;
+        for(let task in Tasks) {
+            // console.log(task);
+            let name = Tasks[task].ClassName;
+            let account = Tasks[task].Account;
+            if(name === "pqout:pqout") {
+                count += 1;
+                if(index.hasOwnProperty(account)) {
+                    index[account] += 1;
+                } else {
+                    index[account] = 1;
+                }
+            }
+            
+            
+        }
+        // console.log(index);
+    }
+    function createSrcTablesIndex(data) {
+        let index = {};
+        for (let name in data.Tasks) {
+            let arrSrcTables = data.Tasks[name].SrcTables;
+            let arrMinTime = arrSrcTables.map((a) => data.Tables[a].MinTimestamp || 0);
+            // let arrMinTime = arrSrcTables.map((a) => {
+            //     if(data.Tables[a].MinTimestamp !== undefined) {
+            //         a = data.Tables[a].MinTimestamp;
+            //     } else {
+            //         a = 0;
+            //     }
 
+            //     return a;
+            // });
+ 
+            let minTime = Math.min(...arrMinTime);
+
+            if(index.hasOwnProperty(name) !== true) {
+                index[name] = minTime;
+            }
+        }
+
+        console.log(index);
+    }
+    createSrcTablesIndex(data);
 });
