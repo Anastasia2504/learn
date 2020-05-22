@@ -46,6 +46,7 @@ function removeFirstLevel(arr) {
       result.push(a);
     } 
   }
-  console.log(result);
+  result = result.flat();
+  return result;
 }
-removeFirstLevel([[5], 1, [3, 4]]);
+console.log(removeFirstLevel([1,2,3]));
