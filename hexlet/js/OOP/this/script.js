@@ -178,7 +178,7 @@ function make(a, b) {
       return this.denom;
     },
     toString() {
-      return `${this.numer} / ${this.denom}`;
+      return `${this.numer}/${this.denom}`;
     },
     add(rat2) {
       return make(
