@@ -16,23 +16,23 @@ const sum = (a, b, c) => a + b + c;
 console.log(sum(5, 10, -2));
 console.log(sum2(5)(10)(-2));
 
-function True() {
+function True2() {
   return (a) => {
     return () => {
       return a;
     }
   }
 }
-console.log(True()(2)());
-function False() {
+console.log(True2()(2)());
+function False2() {
   return () => {
     return (b) => {
       return b;
     }
   }
 }
-console.log(False()()(2));
-function If(True) {
+console.log(False2()()(2));
+function If2(True) {
   return True();
 };
 console.log(If(True)(2)());
@@ -70,7 +70,13 @@ const False = () => {
 const If = (f) => {
   return f;
 };
-*/
+
+
+
+
+
+
+
 const IfCheck = (a) => {
   return (b) => {
     return (c) => {
