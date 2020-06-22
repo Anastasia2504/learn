@@ -1,0 +1,30 @@
+.contanier {
+  margin: 0 auto;
+}
+.nav-img {
+  width: 10%;
+}
+
+/* main */
+.tblock1{
+  background-image: url(img/Australia.jpg);
+  height: auto;
+  display: inline-block;
+
+}
+.tblock2{
+  background-image: url(img/Lissabon.jpg);
+  display: inline-block;
+}
+.tblock3{
+  background-image: url(img/Italy.jpg);
+  display: inline-block;
+}
+.tblock4{
+  background-image: url(img/Spain.jpg);
+  display: inline-block;
+}
+.tblock5{
+  background-image: url(img/Germany.jpg);
+  display: inline-block;
+}
