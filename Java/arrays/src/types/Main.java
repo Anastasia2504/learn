@@ -6,5 +6,5 @@ public class Main {
 	// write your code here
     }
 
-    public static void r
+    public static void 
 }
