@@ -1,0 +1,43 @@
+.goods {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.good {
+  border: none;
+  display: inline-block;
+  width: 30%;
+  height: 35%;
+}
+
+.count {
+  display: inline-block;
+  width: 50px;
+  border: 2px solid red;
+}
+
+.mybtn {
+  background: none;
+  border: 2px solid red;
+  padding: 0px;
+  width: 20%;
+  height: 18%;
+  font-size: 28px;
+  position: relative;
+}
+
+.mybtn:hover {
+  background: lightpink;
+}
+
+.btn {
+  margin-left: 20px;
+}
+
+.bag_img {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  width: 50%;
+  height: 50%;
+}

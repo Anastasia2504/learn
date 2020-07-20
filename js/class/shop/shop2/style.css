@@ -1,0 +1,52 @@
+.goods {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.good {
+  border: none;
+  display: inline-block;
+  width: 30%;
+  height: 35%;
+}
+
+.count {
+  display: inline-block;
+  width: 30%;
+  border: 2px solid red;
+  margin-left: 10px;
+}
+
+.mybtn {
+  background: none;
+  border: 2px solid red;
+  padding: 0px;
+  width: 20%;
+  height: 18%;
+  font-size: 28px;
+  position: relative;
+}
+
+.mybtn:hover {
+  background: lightpink;
+}
+
+.btn {
+  margin-left: 20px;
+}
+
+.bag_img {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 50%;
+  height: 40%;
+}
+
+.contanier-bag {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.total-bag {
+  display: inline-block;
+}

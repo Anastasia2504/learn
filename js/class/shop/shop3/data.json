@@ -1,0 +1,65 @@
+data = [{
+    "srcImg": "img/dress1.jpg",
+    "name": "Dress 'Night'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 399,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress2.jpg",
+    "name": "Dress 'Evening'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 299,
+    "count": 0
+
+  },
+  {
+    "srcImg": "img/dress3.jpg",
+    "name": "Dress 'Lina'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 99,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress4.jpg",
+    "name": "Dress 'Milana'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 45,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress5.jpg",
+    "name": "Dress 'Asha'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 65,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress6.jpg",
+    "name": "Dress 'Kitty'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 50,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress7.jpg",
+    "name": "Dress 'Alisha'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 45,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress8.jpg",
+    "name": "Dress 'Tiana'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 50,
+    "count": 0
+  },
+  {
+    "srcImg": "img/dress9.jpg",
+    "name": "Dress 'Veronika'",
+    "desk": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "sale": 85,
+    "count": 0
+  }
+]
